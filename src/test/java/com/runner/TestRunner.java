@@ -12,9 +12,9 @@ import io.cucumber.testng.CucumberOptions;
 			
 			tags = "@valid_input", //tags from feature file
 			
-			features = {"src/test/resources/features/SignIn.feature"}, //location of feature files
+			features = {"src/test/resources/features"}, //location of feature files
 			
-			glue= "com.stepdefinitions") //location of step definition files
+			glue= {"com.stepdefinitions", "com.hooks"} ) //location of step definition files
 	
 public class TestRunner extends AbstractTestNGCucumberTests{
 		
