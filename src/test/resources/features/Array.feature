@@ -40,21 +40,22 @@ Background:
   @tag1
   Scenario: Validate Try here button on Applications of Array page with invalid python code
   
-  	Given The user is on "Applications of Array" page under array module
+  	Given The user opens "Applications of Array" page under array module
     When The user clicks on "Try here" button
     Then The user should be redirected to tryEditor page with a Run button to test
     When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
     Then The user should see an alert to signal bad input
 
   @tag2
   Scenario Outline: Validate Try here button on Applications of Array page with valid python code
   
-    Given The user is on "Applications of Array" page under array module
+    Given The user opens "Applications of Array" page under array module
     When The user clicks on "Try here" button
     Then The user should be redirected to tryEditor page with a Run button to test
     When The user enters valid python code from excel sheet "<SheetName>" and row number "<RowNumber>"
     And The user clicks on "Run" button
-    Then Console should display reuslt "<Result>" 
+    Then Console should display result "<Result>" 
 
     Examples: 
       | SheetName  | RowNumber 	| Result  |
@@ -64,7 +65,7 @@ Background:
   @tag1
   Scenario: Validate side panel options of Array page
   
-  	Given The user is on "Applications of Array" page under array module
+  	Given The user opens "Applications of Array" page under array module
   	When The user clicks on "Arrays in Python" link on the side panel of array page
     Then The user should be redirected to "Arrays in Python" page under array module
   	When The user clicks on "Arrays Using List" link on the side panel of array page
@@ -77,41 +78,91 @@ Background:
   @tag1
  	Scenario: Validate navigation from array page to Practice Questions page
   
-  	Given The user is on "Applications of Array" page under array module
+  	Given The user opens "Applications of Array" page under array module
   	When The user clicks on "Practice Questions" link on the side panel of array page
     Then The user should be redirected to "Practice Questions" page under array module
   
-    
  @tag1
-  Scenario: Validate navigation from Practice Questions page to Search the array page
-  
-    Given The user is on "Practice Questions" page under array module
+  Scenario: Validate navigation from Practice Questions page to Search the array page and validate invalid python code in tryEditor
+  	
+  	Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
     When The user clicks on "Search the array" link available in practice questions page
-    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons        
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then The user should see an alert to signal bad input       
       
-  Scenario: Validate navigation from Practice Questions page to Max Consecutive Ones page
+  Scenario: Validate navigation from Practice Questions page to Max Consecutive Ones page and validate invalid python code in tryEditor
   
-    Given The user is on "Practice Questions" page under array module
+    Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
     When The user clicks on "Max Consecutive Ones" link available in practice questions page
-    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons      
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then The user should see an alert to signal bad input      
       
-  Scenario: Validate navigation from Practice Questions page to Find Numbers with Even Number of Digits page
+  Scenario: Validate navigation from Practice Questions page to Find Numbers with Even Number of Digits page and validate invalid python code in tryEditor
   
-    Given The user is on "Practice Questions" page under array module
+    Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
     When The user clicks on "Find Numbers with Even Number of Digits" link available in practice questions page
-    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons 
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then The user should see an alert to signal bad input
     
-  Scenario: Validate navigation from Practice Questions page to Squares of a  Sorted Array page
+  Scenario: Validate navigation from Practice Questions page to Squares of a Sorted Array page and validate invalid python code in tryEditor
   
-    Given The user is on "Practice Questions" page under array module
+    Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
     When The user clicks on "Squares of a  Sorted Array" link available in practice questions page
-    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons     
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then The user should see an alert to signal bad input
+    
+ 	@tag1
+  Scenario: Validate tryEditor under Search the array page with valid python code
+  	
+  	Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
+    When The user clicks on "Search the array" link available in practice questions page
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then Console should display result  
+       
+  Scenario: Validate tryEditor under Search the array page with valid python code   
   
+    Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
+    When The user clicks on "Max Consecutive Ones" link available in practice questions page
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then Console should display result 
       
-      
-      
-      
-      
+  Scenario: Validate tryEditor under Search the array page with valid python code
+  
+    Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
+    When The user clicks on "Find Numbers with Even Number of Digits" link available in practice questions page
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then Console should display result
+    
+  Scenario: Validate tryEditor under Search the array page with valid python code
+  
+    Given The user opens "Applications of Array" page under array module
+    And The user opens "Practice Questions" page under array module
+    When The user clicks on "Squares of a  Sorted Array" link available in practice questions page
+    Then The user should be redirected to Question page contains a question,a tryEditor to write code with Run and Submit buttons
+    When The user enters invalid python code to the texteditor
+    And The user clicks on "Run" button
+    Then Console should display result  
       
       
       
