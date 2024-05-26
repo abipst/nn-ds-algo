@@ -1,22 +1,21 @@
 package com.stepdefinitions;
 
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.drivermanager.DriverManager;
 import com.pageobjects.SignIn_Elements;
+import com.utilities.ConfigReader;
+import com.utilities.LoggerLoad;
 
-import dsalgo_pom.SignIn_Page;
-import dsalgo_utilities.ConfigReader;
-import dsalgo_utilities.LoggerLoad;
-import dsalgo_webdriver_manager.Webdriver_Manager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class SignIn_StepDefinition {
-SignIn_Page signInPOM = new SignIn_Page();
+	
+SignIn_Elements signInPOM = new SignIn_Elements();
 	
 	ConfigReader config =  new ConfigReader();
 	
@@ -27,7 +26,7 @@ SignIn_Page signInPOM = new SignIn_Page();
 		
 		signInPOM.getNavbarSignInBtn().click();
 		
-		String currentUrl = Webdriver_Manager.getDriver().getCurrentUrl();
+		String currentUrl = DriverManager.getDriver().getCurrentUrl();
 		
 		LoggerLoad.info("Opening sign in page "+currentUrl);
 		
@@ -60,7 +59,7 @@ SignIn_Page signInPOM = new SignIn_Page();
 		
 		if(errorMsg.equalsIgnoreCase("Please fill out this field.")) {
 		
-			WebElement activeElement = Webdriver_Manager.getDriver().switchTo().activeElement();
+			WebElement activeElement = DriverManager.getDriver().switchTo().activeElement();
 		
 			String errMsg = activeElement.getAttribute("validationMessage");
 		
@@ -118,7 +117,7 @@ SignIn_Page signInPOM = new SignIn_Page();
 	@Then("The user should be redirected to Home Page with the message {string}")
 	public void the_user_should_be_redirected_to_home_page_with_the_message(String string) {
 		
-		String homePageUrl = Webdriver_Manager.getDriver().getCurrentUrl();
+		String homePageUrl = DriverManager.getDriver().getCurrentUrl();
 		
 		Assert.assertEquals(homePageUrl,"https://dsportalapp.herokuapp.com/home", "Home page is not displayed after sign in");
 		
@@ -166,11 +165,11 @@ SignIn_Page signInPOM = new SignIn_Page();
 	@Then("The user should be redirected to Register Page")
 	public void the_user_should_be_redirected_to_register_page() {
 	    
-		String registerPageUrl = Webdriver_Manager.getDriver().getCurrentUrl();
+		String registerPageUrl = DriverManager.getDriver().getCurrentUrl();
 		
 		Assert.assertEquals(registerPageUrl,"https://dsportalapp.herokuapp.com/register", "Register page is not displayed");
 		
-		String registerPageTitle = Webdriver_Manager.getDriver().getTitle();
+		String registerPageTitle = DriverManager.getDriver().getTitle();
 		
 		Assert.assertEquals(registerPageTitle,"Registration", "Register page is not displayed");
 	    

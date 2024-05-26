@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
 			
 			monochrome=false,  //console output colour
 			
-			tags = "@valid_input", //tags from feature file
+			tags = "@signin", //tags from feature file
 			
 			features = {"src/test/resources/features"}, //location of feature files
 			

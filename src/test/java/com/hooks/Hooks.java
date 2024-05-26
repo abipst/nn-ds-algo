@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.drivermanager.DriverManager;
 import com.utilities.ConfigReader;
+import com.utilities.LoggerLoad;
 
 import java.io.*;
 
@@ -20,10 +21,14 @@ public class Hooks extends DriverManager{
 	public void setUp() {
 		
 		ConfigReader config =  new ConfigReader();
+		
 		String browser = config.getBrowser();
+		
 		String applicationUrl = config.getApplicationUrl();
 		
 		WebDriver driver = DriverManager.initializeDriver(browser);
+		
+		LoggerLoad.info("Opening application url: "+applicationUrl);
 		
 		driver.get(applicationUrl);
 		
@@ -32,19 +37,25 @@ public class Hooks extends DriverManager{
 	@After
 	public void tearDown(Scenario scenario) {
 		
+		WebDriver driver = DriverManager.getDriver();
+		
 		if(driver!=null && scenario.isFailed()) {
+			
+			LoggerLoad.info("Taking screenshot for a failed sceanrio "+scenario);
 		
 			TakesScreenshot ts = (TakesScreenshot)driver;
 		
 			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
 		
-			//scenario.attach(screenshot, "image/png", "errorscreen");
+			scenario.attach(screenshot, "image/png", "errorscreen");	
 		
 			Allure.addAttachment("failed scenario screenshot", new ByteArrayInputStream(screenshot));
 
 		}
-		//Log
+		
 		if(driver!=null) {
+			
+			LoggerLoad.info("Quitting the browser ");
 			
 			driver.quit();
 		}

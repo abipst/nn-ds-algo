@@ -16,8 +16,12 @@ import com.utilities.LoggerLoad;
 
 public class DriverManager {
 	
-	public static WebDriver driver;
+	private static WebDriver driver;
 	
+	public static WebDriver getDriver() {
+		return driver;
+	}
+
 	public static  WebDriver initializeDriver(String browser) {
 		
 		switch (browser.toLowerCase()) {
@@ -69,7 +73,7 @@ public class DriverManager {
 			
 		}
 		
-		return driver;
+		return getDriver();
 	}
 	
 	

@@ -7,12 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import com.drivermanager.DriverManager;
 import com.hooks.Hooks;
 
-import dsalgo_webdriver_manager.Webdriver_Manager;
 
-public class SignIn_Elements extends DriverManager{
+public class SignIn_Elements {
 	
 	 public SignIn_Elements() {
-		 PageFactory.initElements( Webdriver_Manager.getDriver(), this);
+		 PageFactory.initElements( DriverManager.getDriver(), this);
 		  
 	  }
 	

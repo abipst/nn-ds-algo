@@ -3,3 +3,75 @@
 [INFO ]2024-05-2122:42:16.681[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
 [INFO ]2024-05-2122:47:33.444[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
 [INFO ]2024-05-2123:03:12.837[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:12.095[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:21.302[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:21.303[main]com.utilities.LoggerLoad1)-Entering invalid credentials Username and password fields blank username  and password 
+[INFO ]2024-05-2618:41:26.438[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:27.972[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:27.973[main]com.utilities.LoggerLoad1)-Entering invalid credentials Username field blank username  and password pass3455
+[INFO ]2024-05-2618:41:28.087[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:29.898[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:29.899[main]com.utilities.LoggerLoad1)-Entering invalid credentials password field blank username ninjafox and password 
+[INFO ]2024-05-2618:41:30.013[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:31.682[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:31.683[main]com.utilities.LoggerLoad1)-Entering invalid credentials Invalid username and password username techfoxx and password superje14r
+[INFO ]2024-05-2618:41:36.950[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:38.783[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:38.784[main]com.utilities.LoggerLoad1)-Entering invalid credentials Invalid username and password username archie2@5t and password aut7o2314r
+[INFO ]2024-05-2618:41:39.066[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:40.848[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:40.848[main]com.utilities.LoggerLoad1)-Entering invalid credentials Valid username and invalid password username ninjafox and password foxproje14r
+[INFO ]2024-05-2618:41:41.098[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:42.871[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:42.871[main]com.utilities.LoggerLoad1)-Entering invalid credentials Valid username and invalid password username ninjafox and password techro2314r
+[INFO ]2024-05-2618:41:48.113[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:49.915[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:41:49.916[main]com.utilities.LoggerLoad1)-Entering valid username ninjafox and password foxproject
+[INFO ]2024-05-2618:41:50.438[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:41:52.272[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:08.326[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:09.328[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:09.952[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:09.953[main]com.utilities.LoggerLoad1)-Entering invalid credentials Username and password fields blank username  and password 
+[INFO ]2024-05-2618:45:10.039[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:10.151[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:10.917[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:11.529[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:11.529[main]com.utilities.LoggerLoad1)-Entering invalid credentials Username field blank username  and password pass3455
+[INFO ]2024-05-2618:45:11.634[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:11.723[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:12.483[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:13.089[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:13.089[main]com.utilities.LoggerLoad1)-Entering invalid credentials password field blank username ninjafox and password 
+[INFO ]2024-05-2618:45:13.199[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:18.291[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:19.079[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:19.697[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:19.697[main]com.utilities.LoggerLoad1)-Entering invalid credentials Invalid username and password username techfoxx and password superje14r
+[INFO ]2024-05-2618:45:19.944[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:20.029[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:20.801[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:21.404[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:21.405[main]com.utilities.LoggerLoad1)-Entering invalid credentials Invalid username and password username archie2@5t and password aut7o2314r
+[INFO ]2024-05-2618:45:21.644[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:21.732[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:22.517[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:23.112[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:23.112[main]com.utilities.LoggerLoad1)-Entering invalid credentials Valid username and invalid password username ninjafox and password foxproje14r
+[INFO ]2024-05-2618:45:23.349[main]com.utilities.LoggerLoad1)-Taking screenshot for a failed sceanrio io.cucumber.java.Scenario@7e61e25c
+[INFO ]2024-05-2618:45:23.425[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:28.527[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:29.312[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:29.911[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:29.912[main]com.utilities.LoggerLoad1)-Entering invalid credentials Valid username and invalid password username ninjafox and password techro2314r
+[INFO ]2024-05-2618:45:30.147[main]com.utilities.LoggerLoad1)-Taking screenshot for a failed sceanrio io.cucumber.java.Scenario@6aea99e7
+[INFO ]2024-05-2618:45:30.226[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:30.312[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:31.064[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:31.663[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:31.663[main]com.utilities.LoggerLoad1)-Entering valid username ninjafox and password foxproject
+[INFO ]2024-05-2618:45:32.176[main]com.utilities.LoggerLoad1)-Quitting the browser 
+[INFO ]2024-05-2618:45:32.262[main]com.utilities.LoggerLoad1)-Launching chrome : chrome
+[INFO ]2024-05-2618:45:33.029[main]com.utilities.LoggerLoad1)-Opening application url: https://dsportalapp.herokuapp.com
+[INFO ]2024-05-2618:45:33.611[main]com.utilities.LoggerLoad1)-Opening sign in page https://dsportalapp.herokuapp.com/login
+[INFO ]2024-05-2618:45:33.695[main]com.utilities.LoggerLoad1)-Quitting the browser 
