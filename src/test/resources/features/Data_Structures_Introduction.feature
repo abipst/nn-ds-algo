@@ -3,7 +3,11 @@ Feature: Validate Data Structures - Introduction module
 
 Background:
 
-		Given Signed in user is on Data structures-Introduction page 
+		Given The user is on home page
+		And The user goes to sign in page
+		And The user enters valid username and password 
+  	And The user clicks on login button
+  	And The user goes to Data Structures - Introduction page 
     
   @tag1
   Scenario: Validate navigation from data structures-introduction page to time complexity page
