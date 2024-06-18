@@ -1,39 +1,40 @@
-package com.drivermanager;
+package dsalgo_webdriver_manager;
 
 import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.chromium.ChromiumOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.safari.SafariOptions;
+import dsalgo_utilities.LoggerLoad;
 
-import com.utilities.LoggerLoad;
 
-public class DriverManager {
+public class Webdriver_Manager {
+
+	//private static WebDriver driver;
 	
-	private static WebDriver driver;
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	
-	public static WebDriver getDriver() {
-		return driver;
-	}
-
-	public static  WebDriver initializeDriver(String browser) {
+	public static WebDriver initializeDriver(String browser) {
+		
+		ChromeOptions chromeOptions = new ChromeOptions();	
 		
 		switch (browser.toLowerCase()) {
 		
 		case "chrome":
 			
-			LoggerLoad.info("Launching chrome : "+browser);	
-			ChromeOptions chromeOptions = new ChromeOptions();	
+			LoggerLoad.info("Launching chrome : "+browser);		
 			chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);	
-			chromeOptions.setAcceptInsecureCerts(true);
-			//chromeOptions.addArguments("--headless");
-			driver = new ChromeDriver(chromeOptions);
+			chromeOptions.setAcceptInsecureCerts(false);
+			chromeOptions.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.DISMISS);
+			chromeOptions.addArguments("start-maximized");
+			chromeOptions.addArguments("--headless");
+			driver.set(new ChromeDriver(chromeOptions));
 			break;
 			
 		case "firefox":
@@ -42,8 +43,10 @@ public class DriverManager {
 			FirefoxOptions firefoxOptions = new FirefoxOptions();
 			firefoxOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);	
 			firefoxOptions.setAcceptInsecureCerts(true);
+			firefoxOptions.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.DISMISS);
+			firefoxOptions.addArguments("start-maximized");
 			firefoxOptions.addArguments("--headless");
-			driver = new FirefoxDriver(firefoxOptions);		
+			driver.set(new FirefoxDriver(firefoxOptions));		
 			break;
 		
 		case "edge":
@@ -52,8 +55,10 @@ public class DriverManager {
 			EdgeOptions edgeOptions = new EdgeOptions();
 			edgeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);	
 			edgeOptions.setAcceptInsecureCerts(true);
+			edgeOptions.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.DISMISS);
+			edgeOptions.addArguments("start-maximized");
 			edgeOptions.addArguments("--headless");
-			driver = new EdgeDriver(edgeOptions);		
+			driver.set(new EdgeDriver(edgeOptions));		
 			break;
 		
 		case "safari":
@@ -62,25 +67,24 @@ public class DriverManager {
 			SafariOptions safariOptions = new SafariOptions();
 			safariOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);	
 			safariOptions.setAcceptInsecureCerts(true);
-			driver = new SafariDriver(safariOptions);		
-			break;
+			safariOptions.setUnhandledPromptBehaviour(UnexpectedAlertBehaviour.DISMISS);
+			driver.set( new SafariDriver(safariOptions));		
+			break;		
 		
 		default:
 			
-			LoggerLoad.info("Launching : "+browser);
-			driver = new ChromeDriver();
+			LoggerLoad.warn("default switch case is getting executed: "+browser);
+			driver.set(new ChromeDriver());
 			break;
 			
 		}
 		
 		return getDriver();
 	}
-	
-	
-	
-	
-	
-	
-	
 
+	public static WebDriver getDriver() {
+		
+		return driver.get();
+	}
+	
 }

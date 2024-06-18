@@ -1,21 +1,21 @@
-package com.hooks;
+package dsalgo_hooks;
+
+import java.io.ByteArrayInputStream;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-import com.drivermanager.DriverManager;
-import com.utilities.ConfigReader;
-import com.utilities.LoggerLoad;
-
-import java.io.*;
-
+import dsalgo_utilities.ConfigReader;
+import dsalgo_utilities.LoggerLoad;
+import dsalgo_webdriver_manager.Webdriver_Manager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.qameta.allure.Allure;
 
-public class Hooks extends DriverManager{
+public class DSalgoHooks {
+
 	
 	@Before
 	public void setUp() {
@@ -26,18 +26,19 @@ public class Hooks extends DriverManager{
 		
 		String applicationUrl = config.getApplicationUrl();
 		
-		WebDriver driver = DriverManager.initializeDriver(browser);
+		WebDriver driver = Webdriver_Manager.initializeDriver(browser);
 		
 		LoggerLoad.info("Opening application url: "+applicationUrl);
 		
 		driver.get(applicationUrl);
 		
+		driver.manage().window().maximize();
 	}
 	
 	@After
 	public void tearDown(Scenario scenario) {
 		
-		WebDriver driver = DriverManager.getDriver();
+		WebDriver driver = Webdriver_Manager.getDriver();
 		
 		if(driver!=null && scenario.isFailed()) {
 			

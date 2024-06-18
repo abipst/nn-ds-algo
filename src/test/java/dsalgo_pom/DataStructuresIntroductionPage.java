@@ -1,18 +1,16 @@
-package com.pageobjects;
+package dsalgo_pom;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.drivermanager.DriverManager;
-
-
+import dsalgo_webdriver_manager.Webdriver_Manager;
 
 public class DataStructuresIntroductionPage {
 	
 	public DataStructuresIntroductionPage(){
 		  
-		  PageFactory.initElements( DriverManager.getDriver(), this);
+		  PageFactory.initElements( Webdriver_Manager.getDriver(), this);
 		  
 		  }
 		
@@ -39,7 +37,9 @@ public class DataStructuresIntroductionPage {
 	 	
 	 	@FindBy ( xpath= "//a[contains(text(),'Try here')]")
 		private WebElement tryHereBtn;
-	 	 	
+	 	 	 	
+	 	// elements in try editor page
+	 	
 	 	@FindBy ( xpath= "//div[@class='input']//div/textarea")
 		private WebElement tryEditorTextarea;
 		

@@ -1,4 +1,4 @@
-@tag
+@data_structures_intro @all
 Feature: Validate Data Structures - Introduction module
 
 Background:
@@ -9,13 +9,13 @@ Background:
   	And The user clicks on login button
   	And The user goes to Data Structures - Introduction page 
     
-  @tag1
+  @navigation
   Scenario: Validate navigation from data structures-introduction page to time complexity page
   
     When The user clicks on Time Complexity link
     Then The user should be redirected to "time complexity" of Data structures-Introduction page 
     
-  @tag1
+  @side_panel
   Scenario: Validate side panel options of Data structures-Introduction page
   
   	Given The user is on Time complexity page
@@ -24,33 +24,47 @@ Background:
     When The user clicks on "Practice Questions" link on the side panel of Data structures-Introduction page
     Then The user should be redirected to "practice questions" of Data structures-Introduction page  
     
-  @tag1
+  @try_editor
   Scenario: Validate Try here button in time complexity page
   
   	Given The user is on Time complexity page
     When The user clicks on Try here button
     Then The user should be redirected to tryEditor page with a Run button to test
     
-  @tag1
-  Scenario: Validate Try here button with invalid python code
+  @invalid_input
+  Scenario Outline: Validate Try here button with invalid python code
   
-  	Given The user is on Time complexity page
+    Given The user is on Time complexity page
     When The user clicks on Try here button
     Then The user should be redirected to tryEditor page with a Run button to test
-    When The user enters invalid python code to the texteditor
-    Then The user should see an alert to signal bad input
+    When The user enters invalid python code from excel sheet "<SheetName>" and row number <RowNumber>
+    And The user clicks on Run button
+    Then The user should see an alert to signal bad input 
 
-  @tag2
+    Examples: 
+      | SheetName  | RowNumber 	|
+      | Pythoncode |     0 			|
+      | Pythoncode |     1 			|
+    
+
+  @valid_input
   Scenario Outline: Validate Try here button with valid python code
   
     Given The user is on Time complexity page
     When The user clicks on Try here button
     Then The user should be redirected to tryEditor page with a Run button to test
-    When The user enters valid python code from excel sheet "<SheetName>" and row number "<RowNumber>"
+    When The user enters valid python code from excel sheet "<SheetName>" and row number <RowNumber>
     And The user clicks on Run button
-    Then Console should display reuslt "<Result>" 
+    Then Console should display result 
 
     Examples: 
-      | SheetName  | RowNumber 	| Result  |
-      | Pythoncode |     0 			|  				|
-      | Pythoncode |     1 			|     		|
+      | SheetName  | RowNumber 	|
+      | Pythoncode |     0 			|
+      | Pythoncode |     1 			|  		
+      
+	@integration
+  Scenario: Validate sign out button from Data Structures - Introduction module  
+    
+  	When The user clicks on Sign out button
+    Then The user should be redirected to Home Page with the message "Logged out successfully"
+    
