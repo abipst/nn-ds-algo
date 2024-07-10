@@ -20,6 +20,7 @@ public class DSalgoHooks {
 	@Before
 	public void setUp() {
 	
+		
 		ConfigReader config =  new ConfigReader();
 		
 		String browser = config.getBrowser();
